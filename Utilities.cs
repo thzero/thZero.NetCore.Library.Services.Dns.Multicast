@@ -19,14 +19,21 @@ limitations under the License.
 
 using System;
 
-namespace thZero.Configuration.Dns.Multicast
+using Microsoft.Extensions.Configuration;
+
+namespace thZero.Services.Dns.Multicast
 {
-    public class Dns
+    public sealed class Utilities
     {
-        #region Public Properties
-        public bool Enabled { get; set; }
-        public string Label { get; set; }
-        public bool Local { get; set; }
-        #endregion
+        public static IConfigurationSection Config(IConfiguration configuration)
+        {
+            Enforce.AgainstNull(() => configuration);
+
+            IConfigurationSection config = configuration.GetSection("Dns")?.GetSection("Multicast");
+            if (config != null)
+                return config;
+
+            throw new Exception("Invalid Dns.Multicast config.");
+        }
     }
 }

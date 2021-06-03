@@ -19,10 +19,14 @@ limitations under the License.
 
 using System;
 
-namespace thZero.Services.Dns.Multicast
+namespace thZero.Configuration.Dns.Multicast
 {
-    public interface IConfigDns
+    public class MulticastDnsConfiguration
     {
-        Configuration.Dns.Multicast.Dns Dns { get; set; }
+        #region Public Properties
+        public bool Enabled { get; set; }
+        public string Label { get; set; }
+        public bool Local { get; set; }
+        #endregion
     }
 }
