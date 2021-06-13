@@ -21,9 +21,9 @@ using System;
 
 using Microsoft.Extensions.Configuration;
 
-namespace thZero.Services.Dns.Multicast
+namespace thZero.Services.Dns.Multicast.Utilities
 {
-    public sealed class Utilities
+    public sealed class Dns
     {
         public static IConfigurationSection Config(IConfiguration configuration)
         {
