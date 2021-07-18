@@ -33,13 +33,13 @@ namespace thZero.Services.Dns.Multicast.Utilities
             if (config != null)
                 return config;
 
-            throw new MissingCommunicationConfigurationException();
+            throw new MissingDnsMulticastConfigurationException();
         }
     }
 
-    public class MissingCommunicationConfigurationException : Exception
+    public class MissingDnsMulticastConfigurationException : Exception
     {
-        public MissingCommunicationConfigurationException() : base("Invalid Dns.Multicast config.")
+        public MissingDnsMulticastConfigurationException() : base("Invalid Dns.Multicast config.")
         {
         }
     }
